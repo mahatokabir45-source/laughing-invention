@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ✅ BEGINNER: Basic Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kabir the Cyber Ninja</title>
+
+  <!-- ✅ INTERMEDIATE: CSS Styling -->
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Courier New', monospace;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #33ff33;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      border-bottom: 2px solid #33ff33;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #33ff33;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      border-bottom: 1px solid #33ff33;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .project, .cert {
+      background: #1a1a1a;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-left: 4px solid #33ff33;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #111;
+      border-top: 2px solid #33ff33;
+    }
+
+    /* ✅ ADVANCED: Typing Effect */
+    .typing {
+      border-right: 2px solid #33ff33;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* ✅ ADVANCED: Button Hover Animation */
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #33ff33;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00cc00;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ BEGINNER: Header + Nav -->
+  <header>
+    <h1 class="typing">Kabir the Cyber Ninja</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ✅ BEGINNER: About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hey! I'm Kabir, a student learning Cyber Security. I enjoy ethical hacking and securing systems. I'm currently learning Linux, Python, and penetration testing tools.</p>
+  </section>
+
+  <!-- ✅ INTERMEDIATE: Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Linux (Kali, Ubuntu)</li>
+      <li>Python scripting</li>
+      <li>Nmap, Burp Suite, Wireshark</li>
+      <li>Web security & OWASP</li>
+    </ul>
+  </section>
+
+  <!-- ✅ INTERMEDIATE: Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>🔍 Port Scanner (Python)</h3>
+      <p>A Python-based tool to scan open ports on a given IP address. Uses sockets and threading.</p>
+    </div>
+
+    <div class="project">
+      <h3>🛡️ XSS Detector</h3>
+      <p>JavaScript tool that tests XSS injection points on vulnerable pages.</p>
+    </div>
+
+  </section>
+
+  <!-- ✅ INTERMEDIATE: Certifications -->
+  <section id="certs">
+    <h2>Certifications</h2>
+
+    <div class="cert">
+      <strong>TryHackMe</strong> - Advent of Cyber, Beginner Paths
+    </div>
+
+    <div class="cert">
+      <strong>CEH (In Progress)</strong> - Certified Ethical Hacker
+    </div>
+
+  </section>
+
+  <!-- ✅ BEGINNER: Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: kabir@cyberninja.dev</p>
+    <p>GitHub: <a href="https://github.com/mahatokabir45-source" target="_blank">mahatokabir45-source</a></p>
+    <a href="mailto:kabir@cyberninja.dev" class="btn">Email Me</a>
+  </section>
+
+  <!-- ✅ BEGINNER: Footer -->
+  <footer>
+    <p>© 2025 Kabir the Cyber Ninja | Built with 💚</p>
+  </footer>
+
+</body>
+</html>
