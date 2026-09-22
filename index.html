@@ -1,182 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ✅ BEGINNER: Basic Setup -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kabir the Cyber Ninja</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kabir | Coder</title>
 
-  <!-- ✅ INTERMEDIATE: CSS Styling -->
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Courier New', monospace;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-      background: #0d0d0d;
-      color: #33ff33;
-    }
+body {
+    background: #080b12;
+    color: #e6edf3;
+    font-family: Consolas, "Courier New", monospace;
+    min-height: 100vh;
+}
 
-    header {
-      text-align: center;
-      padding: 2rem;
-      background: #111;
-      border-bottom: 2px solid #33ff33;
-    }
+nav {
+    padding: 20px 8%;
+    border-bottom: 1px solid #1d2633;
+    display: flex;
+    justify-content: space-between;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-    }
+.logo {
+    color: #58a6ff;
+    font-size: 20px;
+}
 
-    nav {
-      margin-top: 1rem;
-    }
+.status {
+    color: #3fb950;
+}
 
-    nav a {
-      color: #33ff33;
-      text-decoration: none;
-      margin: 0 1rem;
-    }
+.hero {
+    padding: 90px 8%;
+    max-width: 1100px;
+}
 
-    nav a:hover {
-      color: white;
-    }
+.terminal {
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0d1117;
+    box-shadow: 0 0 40px rgba(0,0,0,.4);
+}
 
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
+.terminal-bar {
+    padding: 12px 16px;
+    background: #161b22;
+    color: #8b949e;
+}
 
-    h2 {
-      border-bottom: 1px solid #33ff33;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-    }
+.dots {
+    color: #ff7b72;
+}
 
-    .project, .cert {
-      background: #1a1a1a;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-left: 4px solid #33ff33;
-    }
+.code {
+    padding: 30px;
+    line-height: 1.8;
+    font-size: 16px;
+}
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #111;
-      border-top: 2px solid #33ff33;
-    }
+.keyword { color: #ff7b72; }
+.function { color: #d2a8ff; }
+.string { color: #a5d6ff; }
+.variable { color: #ffa657; }
+.comment { color: #8b949e; }
 
-    /* ✅ ADVANCED: Typing Effect */
-    .typing {
-      border-right: 2px solid #33ff33;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 4s steps(40, end) forwards;
-    }
+h1 {
+    font-size: clamp(40px, 7vw, 80px);
+    margin: 25px 0;
+}
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
+.highlight {
+    color: #58a6ff;
+}
 
-    /* ✅ ADVANCED: Button Hover Animation */
-    .btn {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: #33ff33;
-      color: #000;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 1rem;
-      transition: 0.3s;
-    }
+.subtitle {
+    color: #8b949e;
+    font-size: 18px;
+}
 
-    .btn:hover {
-      background: #00cc00;
-      transform: scale(1.05);
-    }
-  </style>
+section {
+    padding: 50px 8%;
+    max-width: 1100px;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #58a6ff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 22px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #58a6ff;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #8b949e;
+    line-height: 1.6;
+}
+
+.skills span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #58a6ff;
+}
+
+.counter {
+    font-size: 45px;
+    color: #3fb950;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #8b949e;
+    border-top: 1px solid #1d2633;
+}
+
+.cursor {
+    display: inline-block;
+    width: 9px;
+    height: 20px;
+    background: #58a6ff;
+    animation: blink .8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- ✅ BEGINNER: Header + Nav -->
-  <header>
-    <h1 class="typing">Kabir the Cyber Ninja</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certs">Certs</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<nav>
+    <div class="logo">&lt;Kabir.dev /&gt;</div>
+    <div class="status">● coding...</div>
+</nav>
 
-  <!-- ✅ BEGINNER: About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hey! I'm Kabir, a student learning Cyber Security. I enjoy ethical hacking and securing systems. I'm currently learning Linux, Python, and penetration testing tools.</p>
-  </section>
+<div class="hero">
 
-  <!-- ✅ INTERMEDIATE: Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Linux (Kali, Ubuntu)</li>
-      <li>Python scripting</li>
-      <li>Nmap, Burp Suite, Wireshark</li>
-      <li>Web security & OWASP</li>
-    </ul>
-  </section>
+    <div class="terminal">
 
-  <!-- ✅ INTERMEDIATE: Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
+        <div class="terminal-bar">
+            <span class="dots">● ● ●</span>
+            &nbsp; kabir.py
+        </div>
 
-    <div class="project">
-      <h3>🔍 Port Scanner (Python)</h3>
-      <p>A Python-based tool to scan open ports on a given IP address. Uses sockets and threading.</p>
+        <div class="code">
+
+            <div>
+                <span class="keyword">class</span>
+                <span class="function">Coder</span>:
+            </div>
+
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="keyword">def</span>
+                <span class="function">__init__</span>
+                (self):
+            </div>
+
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                self.name =
+                <span class="string">"Kabir Mahato"</span>
+            </div>
+
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                self.role =
+                <span class="string">"Developer"</span>
+            </div>
+
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                self.skills =
+                <span class="string">["Python", "HTML", "CSS", "JS", "AI"]</span>
+            </div>
+
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                self.mindset =
+                <span class="string">"Never Give Up"</span>
+            </div>
+
+            <br>
+
+            <div>
+                <span class="comment">
+                # When something doesn't work...
+                </span>
+            </div>
+
+            <div>
+                <span class="keyword">while</span>
+                <span class="variable">problem</span>:
+            </div>
+
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="function">debug</span>()
+            </div>
+
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="function">learn</span>()
+            </div>
+
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="function">try_again</span>()
+            </div>
+
+            <br>
+
+            <div>
+                <span class="function">print</span>(
+                <span class="string">
+                "I don't give up."
+                </span>)
+                <span class="cursor"></span>
+            </div>
+
+        </div>
     </div>
 
-    <div class="project">
-      <h3>🛡️ XSS Detector</h3>
-      <p>JavaScript tool that tests XSS injection points on vulnerable pages.</p>
+    <h1>
+        I'm <span class="highlight">Kabir.</span><br>
+        I build things with code.
+    </h1>
+
+    <p class="subtitle">
+        Python • Web Development • JavaScript • AI • Discord Bots
+    </p>
+
+</div>
+
+<section>
+
+<h2>01 — My Skills</h2>
+
+<div class="skills">
+    <span>Python</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>Artificial Intelligence</span>
+    <span>Discord Bots</span>
+    <span>Web Development</span>
+</div>
+
+</section>
+
+<section>
+
+<h2>02 — Things I Build</h2>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>🤖 AI Projects</h3>
+        <p>
+            Experimenting with AI assistants,
+            AI applications and intelligent bots.
+        </p>
     </div>
 
-  </section>
-
-  <!-- ✅ INTERMEDIATE: Certifications -->
-  <section id="certs">
-    <h2>Certifications</h2>
-
-    <div class="cert">
-      <strong>TryHackMe</strong> - Advent of Cyber, Beginner Paths
+    <div class="card">
+        <h3>🌐 Websites</h3>
+        <p>
+            Creating interactive websites using
+            HTML, CSS and JavaScript.
+        </p>
     </div>
 
-    <div class="cert">
-      <strong>CEH (In Progress)</strong> - Certified Ethical Hacker
+    <div class="card">
+        <h3>💬 Discord Bots</h3>
+        <p>
+            Building bots with commands,
+            security features and databases.
+        </p>
     </div>
 
-  </section>
+    <div class="card">
+        <h3>🎨 Creative Code</h3>
+        <p>
+            Turning ideas into animations,
+            interactive pages and digital experiences.
+        </p>
+    </div>
 
-  <!-- ✅ BEGINNER: Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: kabir@cyberninja.dev</p>
-    <p>GitHub: <a href="https://github.com/mahatokabir45-source" target="_blank">mahatokabir45-source</a></p>
-    <a href="mailto:kabir@cyberninja.dev" class="btn">Email Me</a>
-  </section>
+</div>
 
-  <!-- ✅ BEGINNER: Footer -->
-  <footer>
-    <p>© 2025 Kabir the Cyber Ninja | Built with 💚</p>
-  </footer>
+</section>
+
+<section>
+
+<h2>03 — Developer Mindset</h2>
+
+<div class="terminal">
+
+<div class="code">
+
+<span class="comment">// My rule</span><br>
+
+<span class="keyword">if</span> (
+<span class="variable">code</span> == 
+<span class="string">"doesn't work"</span>
+) {<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="function">debug</span>();<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="function">learn</span>();<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="function">tryAgain</span>();<br>
+
+}<br><br>
+
+<span class="comment">
+// Error is not the end.
+// It's another step toward understanding.
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>04 — Coding Statistics</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="counter" id="projects">0</div>
+<p>Projects Built</p>
+</div>
+
+<div class="card">
+<div class="counter" id="bugs">0</div>
+<p>Bugs Debugged</p>
+</div>
+
+<div class="card">
+<div class="counter" id="coffee">0</div>
+<p>Ideas Created</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+&gt; Kabir.dev — Code. Learn. Build. Repeat.
+</p>
+
+<br>
+
+<p>
+Made with HTML + CSS + JavaScript
+</p>
+
+</footer>
+
+<script>
+
+function animate(id, target) {
+
+    let number = 0;
+
+    const element = document.getElementById(id);
+
+    const timer = setInterval(() => {
+
+        number++;
+
+        element.textContent = number;
+
+        if (number >= target) {
+            clearInterval(timer);
+        }
+
+    }, 30);
+}
+
+animate("projects", 27);
+animate("bugs", 143);
+animate("coffee", 89);
+
+</script>
 
 </body>
 </html>
